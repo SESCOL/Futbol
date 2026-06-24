@@ -736,11 +736,6 @@ function drawGameOverScreen(){
   ctx.fillText(`⚽ Goles: ${score}`,W/2,H*0.45);
 
   if(continues>0){
-    // Continúa disponible
-    ctx.fillStyle='#FFD700';
-    ctx.font=`bold ${Math.min(W*0.06,26)}px Arial`;
-    ctx.fillText(`Continúa disponible: ${continues}`,W/2,H*0.55);
-
     // Cuenta regresiva circular
     const cr=36, cx=W/2, cy=H*0.66;
     const secs=Math.ceil(countdownT);
@@ -777,10 +772,6 @@ function drawGameOverScreen(){
 
   } else {
     // Sin continues — solo reiniciar
-    ctx.fillStyle='rgba(255,100,100,0.9)';
-    ctx.font=`bold ${Math.min(W*0.06,24)}px Arial`;
-    ctx.fillText('Sin continúas disponibles',W/2,H*0.56);
-
     const bw=Math.min(250,W*0.65), bh=52;
     const bx=W/2-bw/2, by=H*0.68;
     const bg=ctx.createLinearGradient(bx,by,bx,by+bh);
